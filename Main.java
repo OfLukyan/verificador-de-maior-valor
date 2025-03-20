@@ -1,24 +1,29 @@
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        int a,b,c;
+        a = entrada.nextInt();
+        b = entrada.nextInt();
+        c = entrada.nextInt();
 
-        System.out.println("quantos números vão ser somados?");
+        int MaiorValor = max(a,b,c);
 
-        int valor1, valor2, valor3;
-        System.out.println("digite 3 números para avaliar entre os 3 qual o maior");
-        valor1 = entrada.nextInt();
-        valor2 = entrada.nextInt();
-        valor3 = entrada.nextInt();
-        if (valor1 > valor2 && valor1 > valor3) {
-            System.out.println("o valor 1 que representa o número: "+ valor1 +", e o maior");
-        } else if (valor2 > valor1 && valor2 >valor3) {
-            System.out.println("o valor 2 que representa o número: "+ valor2 +", e o maior");
+        MostrarValor(MaiorValor);
+    }
+    public static int max(int x, int y, int z) {
+        int xyz;
+
+        if (x > y && x > z) {
+            xyz = x;
+        } else if (y > z && y > x) {
+            xyz = y;
         } else {
-            System.out.println("o valor 3 que representa o número: "+ valor3 +", e o maior");
+            xyz = z;
         }
+        return xyz;
 
-
-        entrada.close();
+    }
+    public static void MostrarValor(int value) {
+        System.out.println("O maior valor é: " + value);
     }
 }
